@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import Input from './components/input';
 import './App.css';
+import React from 'react';
 
+import styles from "./components/style.module.css"
 function App() {
-  return (
+ let [input,setInput]=React.useState("")
+ let [list,setList]=React.useState([])
+ let [completed,setCompleted]=React.useState([])
+ let [showtodo,setshowtodo]=React.useState(false)
+return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>To Do List</h2>
+      <div className={styles.container}>
+      <Input showtodo={showtodo} setshowtodo={setshowtodo} completed={completed} setCompleted={setCompleted}list={list} input={input} setInput={setInput} setList={setList}></Input>
+      </div>
     </div>
   );
 }
